@@ -1,6 +1,8 @@
 """Execução do roteiro de passos (definido no YAML) para cada empresa."""
 
 import logging
+import re
+import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -12,7 +14,7 @@ log = logging.getLogger(__name__)
 
 ACOES = {
     "tecla", "digitar", "menu", "clicar_botao", "esperar_janela",
-    "esperar_fechar", "aguardar", "capturar_tela",
+    "esperar_fechar", "aguardar", "capturar_tela", "criar_pasta", "verificar_arquivo",
 }
 
 
@@ -25,6 +27,7 @@ class ResultadoEmpresa:
     mensagem: str = ""
     das_conferencia: str = ""
     aliquota_efetiva: str = ""
+    arquivos_gerados: list = field(default_factory=list)
     evidencias: list = field(default_factory=list)
 
 
@@ -45,6 +48,24 @@ def _substituir(valor, variaveis):
     return valor
 
 
+def montar_variaveis(empresa: dict, competencia: str, globais: dict) -> dict:
+    """Variáveis do roteiro: colunas da empresa + derivadas da competência + `variaveis` do config."""
+    mes, ano = competencia.split("/")
+    variaveis = {
+        **empresa,
+        "competencia": competencia,
+        "mes": mes,
+        "ano": ano,
+        "competencia_mmaaaa": f"{mes}{ano}",
+        "competencia_aaaamm": f"{ano}{mes}",
+        "cnpj_numeros": re.sub(r"\D", "", empresa.get("cnpj", "")),
+    }
+    # Variáveis globais podem usar as da empresa, ex.: "C:/PGDAS/$competencia_aaaamm"
+    for nome, valor in (globais or {}).items():
+        variaveis.setdefault(nome, Template(str(valor)).safe_substitute(variaveis))
+    return variaveis
+
+
 class ExecutorRoteiro:
     def __init__(self, driver, config, pasta_evidencias: Path):
         self.driver = driver
@@ -52,11 +73,13 @@ class ExecutorRoteiro:
         self.pasta_evidencias = pasta_evidencias
         self.timeout_padrao = config.get("timeout_padrao", 30)
         self.passos = config["roteiro"]
+        self.variaveis_globais = config.get("variaveis", {})
         self.recuperacao = config.get("recuperacao", [{"tecla": "{ESC}"}] * 3)
         validar_roteiro(self.passos)
         validar_roteiro(self.recuperacao)
+        self.usa_cnpj = "cnpj_numeros" in str(self.passos) + str(self.variaveis_globais)
 
-    def _executar_passo(self, passo, variaveis, resultado):
+    def _executar_passo(self, passo, variaveis, resultado, inicio=0.0):
         acao, valor = next(iter(passo.items()))
         valor = _substituir(valor, variaveis)
         d = self.driver
@@ -80,6 +103,16 @@ class ExecutorRoteiro:
             arquivo = self._arquivo_evidencia(variaveis, valor)
             d.capturar_tela(arquivo)
             resultado.evidencias.append(str(arquivo))
+        elif acao == "criar_pasta":
+            d.criar_pasta(valor)
+        elif acao == "verificar_arquivo":
+            if isinstance(valor, dict):
+                padrao, timeout = valor["padrao"], valor.get("timeout", self.timeout_padrao)
+            else:
+                padrao, timeout = valor, self.timeout_padrao
+            arquivo = d.verificar_arquivo(padrao, inicio, float(timeout))
+            log.info("Arquivo gerado: %s", arquivo)
+            resultado.arquivos_gerados.append(str(arquivo))
 
     def _arquivo_evidencia(self, variaveis, sufixo):
         comp = variaveis["competencia"].replace("/", "-")
@@ -102,13 +135,21 @@ class ExecutorRoteiro:
         resultado.aliquota_efetiva = f"{calc.aliquota_efetiva * 100:.4f}% (Anexo {calc.anexo}, faixa {calc.faixa})"
 
     def processar(self, empresa: dict, competencia: str) -> ResultadoEmpresa:
-        variaveis = {**empresa, "competencia": competencia}
+        variaveis = montar_variaveis(empresa, competencia, self.variaveis_globais)
         resultado = ResultadoEmpresa(empresa["codigo"], empresa.get("nome", ""), competencia)
         self._conferir(empresa, resultado)
         log.info("Empresa %s - %s: iniciando apuração %s", resultado.codigo, resultado.nome, competencia)
+        if self.usa_cnpj and len(variaveis["cnpj_numeros"]) != 14:
+            resultado.status = "ERRO"
+            resultado.mensagem = "CNPJ ausente ou inválido no empresas.csv (usado no nome do arquivo)"
+            log.error("Empresa %s: %s", resultado.codigo, resultado.mensagem)
+            return resultado
+        # Arquivos gravados antes deste instante não contam como gerados agora
+        # (margem de 2s para a resolução de data/hora do sistema de arquivos)
+        inicio = time.time() - 2
         try:
             for passo in self.passos:
-                self._executar_passo(passo, variaveis, resultado)
+                self._executar_passo(passo, variaveis, resultado, inicio)
         except Exception as exc:  # qualquer falha na tela não pode parar o lote
             resultado.status = "ERRO"
             resultado.mensagem = f"{type(exc).__name__}: {exc}"

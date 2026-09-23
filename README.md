@@ -4,9 +4,10 @@ Robô (RPA) em Python que, para cada empresa de uma lista:
 
 1. troca de empresa no Domínio (F8);
 2. abre a apuração e processa a competência informada;
-3. salva capturas de tela como evidência;
-4. recalcula o DAS pelas tabelas da LC 123/2006 (LC 155/2016) para **conferir** o valor do Domínio;
-5. gera um relatório CSV com o status de cada empresa (erros não param o lote).
+3. gera o arquivo do **PGDAS-D** e confere se ele foi realmente gravado em disco;
+4. salva capturas de tela como evidência;
+5. recalcula o DAS pelas tabelas da LC 123/2006 (LC 155/2016) para **conferir** o valor do Domínio;
+6. gera um relatório CSV com o status de cada empresa (erros não param o lote).
 
 > O Domínio não tem API pública; o robô controla a tela via teclado/menus
 > (pywinauto). **Os passos precisam ser ajustados à sua versão do Domínio** no
@@ -38,20 +39,24 @@ copy empresas.exemplo.csv empresas.csv
 
 Saída em `saida/`: `relatorio_<competência>_<data>.csv`, `log_<data>.txt` e
 `evidencias/<competência>/<código>_*.png` (inclusive telas de erro).
+Os arquivos do PGDAS-D vão para `C:\PGDAS-D\<AAAAMM>\PGDASD_<CNPJ>_<AAAAMM>.txt`
+(configurável) e o caminho de cada um aparece na coluna `arquivos_gerados` do relatório.
 Código de retorno: `0` tudo OK, `1` falha de configuração, `2` alguma empresa com erro.
 
 ## empresas.csv
 
 Separador `;` (padrão do Excel). Colunas: `codigo` (código da empresa no Domínio,
-obrigatório), `nome`, `ativo` (`N` pula a empresa) e, para a conferência do DAS,
+obrigatório), `cnpj` (obrigatório para o PGDAS-D: vai no nome do arquivo; empresa
+sem CNPJ válido é marcada com erro sem mexer no Domínio), `nome`, `ativo` (`N`
+pula a empresa), `pasta_pgdas` (opcional, destino próprio da empresa) e, para a conferência do DAS,
 `anexo` (I a V), `receita_mes`, `rbt12`, `folha12` (folha dos últimos 12 meses,
 usada no Fator R do Anexo V). Qualquer coluna vira variável no roteiro (`$cnpj` etc.).
 
 ## Ajustando o roteiro (`config.yaml`)
 
 Cada passo tem uma ação: `tecla`, `digitar`, `menu`, `clicar_botao`,
-`esperar_janela`, `esperar_fechar`, `aguardar`, `capturar_tela`. Veja os
-comentários em `config.exemplo.yaml`. Dicas:
+`esperar_janela`, `esperar_fechar`, `aguardar`, `capturar_tela`, `criar_pasta`,
+`verificar_arquivo`. Veja os comentários em `config.exemplo.yaml`. Dicas:
 
 - Faça a apuração manualmente anotando cada tecla/TAB e reproduza no roteiro.
 - Para descobrir títulos de janelas e botões:
@@ -63,6 +68,19 @@ comentários em `config.exemplo.yaml`. Dicas:
 - Se menus/botões não forem encontrados, troque `backend: win32` por `uia`, ou
   use atalhos de teclado (`%m` = Alt+M) em vez de `menu`.
 - Prefira `esperar_janela` a `aguardar` fixo: o robô fica mais rápido e confiável.
+
+### PGDAS-D
+
+O bloco "3) Geração do arquivo do PGDAS-D" do roteiro abre a tela de geração,
+informa competência e caminho do arquivo, clica em Gerar e usa
+`verificar_arquivo` para esperar o arquivo aparecer. Só conta arquivo **não vazio
+e gravado durante o processamento daquela empresa** — um arquivo antigo de
+outra execução não é aceito. Se não aparecer no tempo limite, a empresa fica com
+`ERRO`. Ajuste o caminho do menu, a ordem dos campos e o texto do botão
+à sua versão do Domínio; se o Domínio abrir uma janela "Salvar como", troque o
+`{TAB}` do campo de arquivo por `esperar_janela: "Salvar.*"` antes de digitar o
+caminho. O robô gera o arquivo; a importação/transmissão no portal do Simples
+Nacional continua manual.
 
 ## Limitações da conferência
 

@@ -43,6 +43,7 @@ def gravar_relatorio(resultados, caminho: Path):
         escritor.writeheader()
         for r in resultados:
             linha = asdict(r)
+            linha["arquivos_gerados"] = " | ".join(linha["arquivos_gerados"])
             linha["evidencias"] = " | ".join(linha["evidencias"])
             escritor.writerow(linha)
 

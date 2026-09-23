@@ -11,8 +11,15 @@ titulo_janela: ".*Dom[ií]nio.*Escrita Fiscal.*"
 backend: win32            # tente "uia" se os menus/botões não forem encontrados
 timeout_padrao: 30        # segundos para esperar_janela/esperar_fechar
 
-# Variáveis disponíveis nos passos: $codigo, $nome, $competencia e qualquer
-# outra coluna do empresas.csv (ex.: $cnpj, $anexo).
+# Variáveis disponíveis nos passos:
+#   $codigo, $nome e qualquer outra coluna do empresas.csv (ex.: $cnpj, $anexo)
+#   $competencia (08/2026), $mes (08), $ano (2026),
+#   $competencia_mmaaaa (082026), $competencia_aaaamm (202608),
+#   $cnpj_numeros (CNPJ só com dígitos)
+#   + as definidas em "variaveis" abaixo (uma coluna de mesmo nome no CSV tem prioridade)
+# Use ${nome} quando a variável vier colada em outro texto: "${cnpj_numeros}_x.txt"
+variaveis:
+  pasta_pgdas: 'C:\PGDAS-D\$competencia_aaaamm'
 #
 # Ações disponíveis:
 #   tecla: "{F8}"            teclas no formato do pywinauto ({ENTER}, {TAB 3}, ^s = Ctrl+S, %m = Alt+M)
@@ -23,6 +30,10 @@ timeout_padrao: 30        # segundos para esperar_janela/esperar_fechar
 #   esperar_fechar: {titulo: "regex", timeout: 300}
 #   aguardar: 1.5            segundos
 #   capturar_tela: "apuracao"  salva PNG em saida/evidencias/<competencia>/<codigo>_apuracao.png
+#   criar_pasta: "$pasta_pgdas"  cria a pasta de destino (se não existir)
+#   verificar_arquivo: {padrao: "caminho/*.txt", timeout: 120}
+#                            espera o arquivo (não vazio, gravado durante esta empresa)
+#                            aparecer; se não aparecer, a empresa fica com ERRO
 roteiro:
   # 1) Troca de empresa (F8 no Domínio)
   - tecla: "{F8}"
@@ -47,7 +58,25 @@ roteiro:
   - capturar_tela: "apuracao"
   - tecla: "{ESC}"
 
-  # 3) (Opcional) Emissão do demonstrativo / DAS — descomente e ajuste
+  # 3) Geração do arquivo do PGDAS-D
+  #    AJUSTE o caminho do menu e a ordem dos campos à sua versão do Domínio.
+  #    Remova este bloco se quiser só a apuração.
+  - criar_pasta: "$pasta_pgdas"
+  - menu: "Arquivos->Simples Nacional->PGDAS-D"
+  - esperar_janela: "PGDAS.*"
+  - digitar: "$competencia"   # competência / período de apuração
+  - tecla: "{TAB}"
+  - digitar: '$pasta_pgdas\PGDASD_${cnpj_numeros}_$competencia_aaaamm.txt'  # arquivo de saída
+  - tecla: "{TAB}"
+  - clicar_botao: "Gerar|OK|Exportar"
+  - verificar_arquivo:
+      padrao: '$pasta_pgdas\PGDASD_${cnpj_numeros}_$competencia_aaaamm*'
+      timeout: 120
+  - capturar_tela: "pgdas"
+  - tecla: "{ENTER}"          # fecha a mensagem de "arquivo gerado com sucesso"
+  - tecla: "{ESC}"
+
+  # 4) (Opcional) Emissão do demonstrativo / DAS — descomente e ajuste
   # - menu: "Relatórios->Impostos->Simples Nacional->Demonstrativo"
   # - esperar_janela: "Demonstrativo.*"
   # - digitar: "$competencia"

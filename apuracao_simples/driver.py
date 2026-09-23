@@ -5,6 +5,7 @@ Domínio já aberta e logada. `DriverSimulado` apenas registra as ações e serv
 para testar o roteiro (--simular) em qualquer sistema operacional.
 """
 
+import glob
 import logging
 import time
 from pathlib import Path
@@ -14,6 +15,21 @@ log = logging.getLogger(__name__)
 
 class ErroAutomacao(RuntimeError):
     pass
+
+
+def aguardar_arquivo(padrao: str, desde: float, timeout: float, intervalo: float = 1.0) -> Path:
+    """Espera surgir um arquivo não vazio que case com `padrao` e foi gravado após `desde`."""
+    limite = time.monotonic() + timeout
+    while True:
+        candidatos = [
+            Path(c) for c in glob.glob(padrao)
+            if Path(c).is_file() and Path(c).stat().st_mtime >= desde and Path(c).stat().st_size > 0
+        ]
+        if candidatos:
+            return max(candidatos, key=lambda c: c.stat().st_mtime)
+        if time.monotonic() >= limite:
+            raise ErroAutomacao(f"Arquivo não gerado em {timeout:.0f}s: {padrao}")
+        time.sleep(intervalo)
 
 
 class DriverSimulado:
@@ -50,6 +66,13 @@ class DriverSimulado:
 
     def capturar_tela(self, arquivo: Path):
         self._registrar("capturar_tela", arquivo.name)
+
+    def criar_pasta(self, pasta):
+        self._registrar("criar_pasta", pasta)
+
+    def verificar_arquivo(self, padrao, desde, timeout):
+        self._registrar("verificar_arquivo", padrao)
+        return Path(padrao)
 
 
 class DriverDominio:
@@ -112,3 +135,9 @@ class DriverDominio:
     def capturar_tela(self, arquivo: Path):
         arquivo.parent.mkdir(parents=True, exist_ok=True)
         self._ativa().capture_as_image().save(arquivo)
+
+    def criar_pasta(self, pasta):
+        Path(pasta).mkdir(parents=True, exist_ok=True)
+
+    def verificar_arquivo(self, padrao, desde, timeout):
+        return aguardar_arquivo(padrao, desde, timeout)
