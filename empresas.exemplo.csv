@@ -1,0 +1,4 @@
+codigo;nome;cnpj;anexo;receita_mes;rbt12;folha12;ativo
+1;Comercial Exemplo LTDA;00.000.000/0001-00;I;50000,00;600000,00;;S
+2;Serviços Exemplo ME;11.111.111/0001-11;V;20000,00;240000,00;72000,00;S
+3;Empresa Inativa;22.222.222/0001-22;III;0;0;;N

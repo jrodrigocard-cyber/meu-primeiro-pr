@@ -1,0 +1,65 @@
+# Configuração da automação — copie para config.yaml e AJUSTE à sua instalação.
+#
+# IMPORTANTE: nomes de menus, títulos de janelas e ordem dos campos variam
+# conforme a versão do Domínio e a configuração de cada escritório. Grave os
+# passos manualmente uma vez (anotando teclas/TABs) e ajuste o roteiro abaixo.
+# Use a ferramenta "Accessibility Insights" ou "print_control_identifiers()"
+# do pywinauto para descobrir títulos exatos das janelas e botões.
+
+# Regex do título da janela principal (o Domínio já deve estar aberto e logado)
+titulo_janela: ".*Dom[ií]nio.*Escrita Fiscal.*"
+backend: win32            # tente "uia" se os menus/botões não forem encontrados
+timeout_padrao: 30        # segundos para esperar_janela/esperar_fechar
+
+# Variáveis disponíveis nos passos: $codigo, $nome, $competencia e qualquer
+# outra coluna do empresas.csv (ex.: $cnpj, $anexo).
+#
+# Ações disponíveis:
+#   tecla: "{F8}"            teclas no formato do pywinauto ({ENTER}, {TAB 3}, ^s = Ctrl+S, %m = Alt+M)
+#   digitar: "$codigo"       digita texto literal (caracteres especiais são escapados)
+#   menu: "Movimentos->Apuração"
+#   clicar_botao: "OK"       regex do texto do botão na janela ativa
+#   esperar_janela: {titulo: "regex", timeout: 60}
+#   esperar_fechar: {titulo: "regex", timeout: 300}
+#   aguardar: 1.5            segundos
+#   capturar_tela: "apuracao"  salva PNG em saida/evidencias/<competencia>/<codigo>_apuracao.png
+roteiro:
+  # 1) Troca de empresa (F8 no Domínio)
+  - tecla: "{F8}"
+  - esperar_janela: "Troca de Empresa.*"
+  - digitar: "$codigo"
+  - tecla: "{ENTER}"
+  - aguardar: 2
+  - tecla: "{ENTER}"          # confirma a troca (ajuste se sua tela pedir outro botão)
+  - esperar_fechar: "Troca de Empresa.*"
+  - aguardar: 2
+
+  # 2) Apuração dos impostos do período
+  - menu: "Movimentos->Apuração"
+  - esperar_janela: "Apura[çc][ãa]o.*"
+  - digitar: "$competencia"   # período inicial
+  - tecla: "{TAB}"
+  - digitar: "$competencia"   # período final
+  - tecla: "{TAB}"
+  - clicar_botao: "Processar|Apurar|OK"
+  - aguardar: 3
+  - esperar_janela: {titulo: "Apura[çc][ãa]o.*", timeout: 300}
+  - capturar_tela: "apuracao"
+  - tecla: "{ESC}"
+
+  # 3) (Opcional) Emissão do demonstrativo / DAS — descomente e ajuste
+  # - menu: "Relatórios->Impostos->Simples Nacional->Demonstrativo"
+  # - esperar_janela: "Demonstrativo.*"
+  # - digitar: "$competencia"
+  # - clicar_botao: "OK"
+  # - aguardar: 5
+  # - capturar_tela: "demonstrativo"
+  # - tecla: "{ESC}"
+
+# Passos executados após um erro, para voltar à tela inicial antes da próxima empresa
+recuperacao:
+  - tecla: "{ESC}"
+  - aguardar: 0.5
+  - tecla: "{ESC}"
+  - aguardar: 0.5
+  - tecla: "{ESC}"
