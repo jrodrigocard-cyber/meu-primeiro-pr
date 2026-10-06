@@ -8,9 +8,13 @@ description: Agente de Convenções Coletivas. Consulta instrumentos coletivos (
 Fonte: https://mediador.trabalho.gov.br/sistemas/mediador/ConsultarInstColetivo
 Dados em `data/convencoes.db` e PDFs em `data/pdfs/` (fora do git).
 
-> Os scripts de consulta ao site (`buscar.py`) foram escritos sem acesso ao site
-> (rede bloqueada na criação). Na primeira execução real, rode `campos` e ajuste
-> os nomes dos campos se necessário.
+> **Testado em 06/10/2026:** o site abre e os campos do formulário são lidos
+> (`txtNRCNPJ`, `txtNORazaoSocial`, `txtDSCategoria`, `cboUFRegistro`, datas de
+> registro/vigência etc.), mas o botão Pesquisar é protegido por **reCAPTCHA v3**
+> e envia a consulta por AJAX (`/ConsultarInstColetivo/getConsultaAvancada`).
+> Por isso `buscar.py consultar` provavelmente será barrado, e não se deve
+> contornar o captcha. Caminho recomendado: faça a consulta no navegador
+> (você, ou a extensão Claude no Chrome), baixe os PDFs e use `analisar.py`.
 
 ## 1. Consultar o Mediador (script automático)
 
