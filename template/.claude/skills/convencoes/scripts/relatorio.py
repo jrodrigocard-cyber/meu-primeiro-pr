@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Gera relatório PDF (padrão Anályse) a partir de um JSON de resumo.
-Uso: relatorio.py resumo.json saida.pdf"""
+Uso: relatorio.py resumo.json [saida.pdf]  (padrão: ~/Downloads/<nome>.pdf)"""
 import json
 import sys
 from pathlib import Path
@@ -78,4 +78,12 @@ def main(js, saida):
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:3])
+    js = sys.argv[1]
+    if len(sys.argv) > 2:
+        out = sys.argv[2]
+    else:
+        pasta = Path.home() / "Downloads"
+        pasta.mkdir(exist_ok=True)
+        out = str(pasta / (Path(js).stem + ".pdf"))
+    main(js, out)
+    print("PDF salvo em", out)

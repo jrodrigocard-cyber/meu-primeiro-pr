@@ -44,7 +44,7 @@ Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas 
 
 ## Relatório PDF para o cliente (padrão Anályse)
 Monte um JSON como `relatorios/MR024201-2025-resumo.json` (título, meta, seções com `tabela` ou `itens`) e rode:
-`python3 $S/relatorio.py resumo.json saida.pdf` (requer `reportlab`). O logo fica em `assets/logo-analyse.png`.
+`python3 $S/relatorio.py resumo.json` (salva em `~/Downloads`; requer `reportlab`). O logo fica em `assets/logo-analyse.png`.
 
 ## Regras
 

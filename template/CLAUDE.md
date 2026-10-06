@@ -29,3 +29,4 @@ Regras: citar sempre o nº da cláusula; conferir valores por extenso x numéric
 apontar divergências; se o tema não existir no PDF, escrever "Não consta". Se
 houver cláusulas relevantes além desses temas (ex.: contribuição patronal), listar em "Outros pontos".
 Relatório ao cliente: seguir o padrão visual da ata da Analyse (logo da empresa).
+Relatórios em PDF: sempre salvar em `~/Downloads` (padrão do `relatorio.py`) e, em sessão na nuvem, também enviar o arquivo ao usuário.
