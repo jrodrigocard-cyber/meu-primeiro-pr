@@ -1,25 +1,85 @@
-{"titulo":"Resumo da Convenção Coletiva de Trabalho","data":"06/10/2026",
-"meta":[["Registro","MR024201/2025 (processo 10264.203784/2025-45)"],
-["Categoria","Empregados em escritórios e empresas de serviços contábeis do RS"],
-["Partes","SESCON/RS (patronal) e SINDESC-RS (profissional)"],
-["Vigência","01/03/2025 a 28/02/2027"]],
-"secoes":[
-{"titulo":"Principais condições","rotulo":"RESUMO","tabela":[
-["Vigência e data-base","01/03/2025 a 28/02/2027. Data-base em 1º de março.","1ª"],
-["Piso salarial (a partir de 01/03/2025)","Empregados em geral: R$ 1.926,75. Técnico em contabilidade com CRC: R$ 2.100,00. Office-boy e limpeza: R$ 1.767,15. Primeiro emprego (6 meses): R$ 1.835,00. Aprendiz: valor-hora do salário mínimo.","3ª"],
-["Reajuste","5% em 01/03/2025. Tabela proporcional para admitidos após a data-base (de 5,00% em março/2024 a 1,52% em fevereiro/2025). Os pisos são a base da revisão de março de 2026.","4ª e 3ª (par. único)"],
-["Vale-refeição ou alimentação","Valor líquido mínimo de R$ 24,36 por dia trabalhado em municípios listados (entre eles Porto Alegre, Canoas e Novo Hamburgo) e R$ 17,72 nos demais. Natureza indenizatória, vedado pagar em dinheiro. Proporcional para quem trabalha menos de 220 horas mensais.","20ª"],
-["Vale-transporte","Antecipado, em no máximo duas parcelas. Cada parcela deve cobrir pelo menos quinze dias de uso.","70ª"],
-["Seguro de vida em grupo","Facultativo ao empregador. R$ 14.666,22 por morte natural e R$ 29.331,09 por morte acidental ou invalidez permanente acidentária.","23ª"],
-["Estabilidade da gestante","Da concepção até 90 dias após o término do benefício previdenciário.","40ª"],
-["Jornada","Até 2 horas extras por dia por acordo individual, com limite de 10 horas diárias. Adicional de hora extra de 50%.","44ª e 18ª"],
-["Contribuição negocial dos empregados","R$ 140,00 por ano, em duas parcelas de R$ 70,00, para toda a categoria (assembleia de 18/12/2024). Desconto em maio e junho/2025 e em abril e maio/2026. Há direito de oposição individual, por carta.","62ª"]]},
-{"titulo":"Outros pontos relevantes","itens":[
-"Contribuição negocial empresarial (SESCON/RS): de R$ 90,34 (sem empregados) a R$ 68.645,43, conforme a faixa de empregados. Vencimentos em 20/06/2025 e 20/04/2026 (cl. 63ª).",
-"Salários até o 5º dia útil do mês seguinte. Multa de meio dia de salário por dia de atraso após notificação (cl. 6ª).",
-"Verbas rescisórias em até 10 dias. Multa de 1 dia de salário por dia de atraso (cl. 24ª).",
-"Adicional por tempo de serviço de 8% do piso a cada cinco anos, ou 6% para admitidos desde 01/11/2000 (cl. 19ª).",
-"Auxílio creche de 0,10 do piso por filho de até 6 anos, quando a empresa não mantém creche (cl. 22ª)."]},
-{"titulo":"Pontos de atenção","itens":[
-"O texto do piso de primeiro emprego traz valor por extenso diferente do numérico (R$ 1.835,00). Recomenda-se conferir com o sindicato.",
-"Os pisos, o vale-refeição e o seguro de vida serão base de revisão em março de 2026. Confirmar os valores vigentes."]}]}
+{
+ "titulo": "Resumo da Convenção Coletiva de Trabalho",
+ "data": "06/10/2026",
+ "meta": [
+  [
+   "Registro",
+   "MR024201/2025 (processo 10264.203784/2025-45)"
+  ],
+  [
+   "Categoria",
+   "Empregados em escritórios e empresas de serviços contábeis do RS"
+  ],
+  [
+   "Partes",
+   "SESCON/RS (patronal) e SINDESC-RS (profissional)"
+  ],
+  [
+   "Vigência",
+   "01/03/2025 a 28/02/2027"
+  ]
+ ],
+ "secoes": [
+  {
+   "titulo": "Principais condições",
+   "rotulo": "RESUMO",
+   "tabela": [
+    [
+     "Vigência e data-base",
+     "01/03/2025 a 28/02/2027. Data-base em 1º de março.",
+     "1ª"
+    ],
+    [
+     "Piso salarial (a partir de 01/03/2025)",
+     "Empregados em geral: R$ 1.926,75. Técnico em contabilidade com CRC: R$ 2.100,00. Office-boy e limpeza: R$ 1.767,15. Primeiro emprego (6 meses): R$ 1.835,00. Aprendiz: valor-hora do salário mínimo.",
+     "3ª"
+    ],
+    [
+     "Reajuste",
+     "5% em 01/03/2025. Tabela proporcional para admitidos após a data-base (de 5,00% em março/2024 a 1,52% em fevereiro/2025). Os pisos são a base da revisão de março de 2026.",
+     "4ª e 3ª (par. único)"
+    ],
+    [
+     "Vale-refeição ou alimentação",
+     "Valor líquido mínimo de R$ 24,36 por dia trabalhado em municípios listados (entre eles Porto Alegre, Canoas e Novo Hamburgo) e R$ 17,72 nos demais. Natureza indenizatória, vedado pagar em dinheiro. Proporcional para quem trabalha menos de 220 horas mensais.",
+     "20ª"
+    ],
+    [
+     "Vale-transporte",
+     "Antecipado, em no máximo duas parcelas. Cada parcela deve cobrir pelo menos quinze dias de uso.",
+     "70ª"
+    ],
+    [
+     "Seguro de vida em grupo",
+     "Facultativo ao empregador. R$ 14.666,22 por morte natural e R$ 29.331,09 por morte acidental ou invalidez permanente acidentária.",
+     "23ª"
+    ],
+    [
+     "Estabilidade da gestante",
+     "Da concepção até 90 dias após o término do benefício previdenciário.",
+     "40ª"
+    ],
+    [
+     "Jornada",
+     "Até 2 horas extras por dia por acordo individual, com limite de 10 horas diárias. Adicional de hora extra de 50%.",
+     "44ª e 18ª"
+    ],
+    [
+     "Contribuição negocial dos empregados",
+     "R$ 140,00 por ano, em duas parcelas de R$ 70,00, para toda a categoria (assembleia de 18/12/2024). Desconto em maio e junho/2025 e em abril e maio/2026. Há direito de oposição individual, por carta.",
+     "62ª"
+    ]
+   ]
+  },
+  {
+   "titulo": "Outros pontos relevantes",
+   "itens": [
+    "Contribuição negocial empresarial (SESCON/RS): de R$ 90,34 (sem empregados) a R$ 68.645,43, conforme a faixa de empregados. Vencimentos em 20/06/2025 e 20/04/2026 (cl. 63ª).",
+    "Salários até o 5º dia útil do mês seguinte. Multa de meio dia de salário por dia de atraso após notificação (cl. 6ª).",
+    "Verbas rescisórias em até 10 dias. Multa de 1 dia de salário por dia de atraso (cl. 24ª).",
+    "Adicional por tempo de serviço de 8% do piso a cada cinco anos, ou 6% para admitidos desde 01/11/2000 (cl. 19ª).",
+    "Auxílio creche de 0,10 do piso por filho de até 6 anos, quando a empresa não mantém creche (cl. 22ª)."
+   ]
+  }
+ ]
+}

@@ -30,3 +30,4 @@ apontar divergências; se o tema não existir no PDF, escrever "Não consta". Se
 houver cláusulas relevantes além desses temas (ex.: contribuição patronal), listar em "Outros pontos".
 Relatório ao cliente: seguir o padrão visual da ata da Analyse (logo da empresa).
 Relatórios em PDF: sempre salvar em `~/Downloads` (padrão do `relatorio.py`) e, em sessão na nuvem, também enviar o arquivo ao usuário.
+Antes de gerar cada relatório, SEMPRE perguntar ao usuário se deseja remover a seção "Pontos de atenção" (a decisão vale só para aquele relatório; não assumir a resposta anterior).

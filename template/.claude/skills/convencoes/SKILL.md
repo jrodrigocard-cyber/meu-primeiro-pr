@@ -46,6 +46,9 @@ Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas 
 Monte um JSON como `relatorios/MR024201-2025-resumo.json` (título, meta, seções com `tabela` ou `itens`) e rode:
 `python3 $S/relatorio.py resumo.json` (salva em `~/Downloads`; requer `reportlab`). O logo fica em `assets/logo-analyse.png`.
 
+## Pergunta obrigatória
+Antes de gerar o relatório, pergunte se o usuário quer remover a seção "Pontos de atenção". Vale só para aquele relatório.
+
 ## Regras
 
 - Cite sempre a cláusula/trecho de origem ao resumir valores (piso, reajuste, vigência).
