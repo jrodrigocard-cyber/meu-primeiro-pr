@@ -39,6 +39,9 @@ python3 $S/analisar.py listar
 python3 $S/analisar.py comparar ID1 ID2           # compara cláusulas lado a lado
 ```
 
+## Resumo para o cliente
+Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas fixos, tabela Tema | O que diz | Cláusula).
+
 ## Regras
 
 - Cite sempre a cláusula/trecho de origem ao resumir valores (piso, reajuste, vigência).
