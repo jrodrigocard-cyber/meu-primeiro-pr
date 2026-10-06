@@ -25,7 +25,13 @@ python3 $S/buscar.py consultar CAMPO=valor ...    # envia a consulta, salva resu
 python3 $S/buscar.py baixar [--id N]              # baixa os PDFs dos instrumentos salvos
 ```
 
-## 2. Analisar PDFs (também funciona com PDFs baixados à mão)
+## 2. Analisar PDFs baixados (fluxo principal)
+
+O usuário baixa o PDF da convenção no navegador (vai para `~/Downloads`).
+Sem argumento, `extrair` pega o PDF mais recente de `~/Downloads`. Depois de
+extrair, leia o texto completo (`data/convencoes.db`, coluna `texto`, ou rode
+`pdftotext -layout arquivo.pdf -`) e responda com resumo: partes, vigência,
+data-base, piso, reajuste, benefícios, jornada e contribuições, citando cláusulas.
 
 ```bash
 python3 $S/analisar.py extrair arquivo.pdf        # texto + cláusulas-chave, salva no banco

@@ -29,7 +29,16 @@ def clausulas(texto):
     return out
 
 
+def ultimo_download():
+    pdfs = sorted(Path.home().joinpath("Downloads").glob("*.pdf"), key=lambda f: f.stat().st_mtime)
+    if not pdfs:
+        sys.exit("Nenhum PDF em ~/Downloads")
+    return str(pdfs[-1])
+
+
 def extrair(a):
+    a.pdf = a.pdf or ultimo_download()
+    print("Arquivo:", a.pdf)
     texto = subprocess.run(["pdftotext", "-layout", a.pdf, "-"], capture_output=True, text=True, check=True).stdout
     cl = clausulas(texto)
     con = conectar()
@@ -68,7 +77,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     s = p.add_subparsers(dest="cmd", required=True)
     e = s.add_parser("extrair")
-    e.add_argument("pdf")
+    e.add_argument("pdf", nargs="?", help="padrão: PDF mais recente em ~/Downloads")
     e.set_defaults(f=extrair)
     s.add_parser("listar").set_defaults(f=listar)
     c = s.add_parser("comparar")
