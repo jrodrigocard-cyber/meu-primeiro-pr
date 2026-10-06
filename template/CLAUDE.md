@@ -11,4 +11,4 @@ Descreva aqui o objetivo do projeto.
 Registre aqui decisões importantes e aprendizados. Atualize sempre que algo relevante for decidido.
 
 ## Skills do projeto
-Ficam em `.claude/skills/<nome>/SKILL.md`.
+Ficam em `.claude/skills/<nome>/SKILL.md`. Inclusa: `anotar` (anotações em SQLite local, `data/notas.db`).
