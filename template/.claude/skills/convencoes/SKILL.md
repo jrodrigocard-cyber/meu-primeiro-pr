@@ -1,0 +1,37 @@
+---
+name: convencoes
+description: Agente de Convenções Coletivas. Consulta instrumentos coletivos (CCT/ACT) no Mediador do Ministério do Trabalho, guarda em SQLite local (data/convencoes.db), extrai cláusulas de PDFs (reajuste, piso, benefícios) e compara convenções. Use quando o usuário falar de convenção coletiva, acordo coletivo, sindicato, piso salarial, reajuste de categoria ou Mediador.
+---
+
+# Agente de Convenções
+
+Fonte: https://mediador.trabalho.gov.br/sistemas/mediador/ConsultarInstColetivo
+Dados em `data/convencoes.db` e PDFs em `data/pdfs/` (fora do git).
+
+> Os scripts de consulta ao site (`buscar.py`) foram escritos sem acesso ao site
+> (rede bloqueada na criação). Na primeira execução real, rode `campos` e ajuste
+> os nomes dos campos se necessário.
+
+## 1. Consultar o Mediador (script automático)
+
+```bash
+S=.claude/skills/convencoes/scripts
+python3 $S/buscar.py campos                       # lista os campos do formulário
+python3 $S/buscar.py consultar CAMPO=valor ...    # envia a consulta, salva resultados
+python3 $S/buscar.py baixar [--id N]              # baixa os PDFs dos instrumentos salvos
+```
+
+## 2. Analisar PDFs (também funciona com PDFs baixados à mão)
+
+```bash
+python3 $S/analisar.py extrair arquivo.pdf        # texto + cláusulas-chave, salva no banco
+python3 $S/analisar.py listar
+python3 $S/analisar.py comparar ID1 ID2           # compara cláusulas lado a lado
+```
+
+## Regras
+
+- Cite sempre a cláusula/trecho de origem ao resumir valores (piso, reajuste, vigência).
+- Valores extraídos por regex são sugestões: confirme no texto do PDF antes de afirmar.
+- Se o site não responder (403/timeout), diga isso; não invente dados.
+- Use o banco apenas pelos scripts.
