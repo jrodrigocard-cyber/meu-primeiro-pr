@@ -42,6 +42,10 @@ python3 $S/analisar.py comparar ID1 ID2           # compara cláusulas lado a la
 ## Resumo para o cliente
 Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas fixos, tabela Tema | O que diz | Cláusula).
 
+## Relatório PDF para o cliente (padrão Anályse)
+Monte um JSON como `relatorios/MR024201-2025-resumo.json` (título, meta, seções com `tabela` ou `itens`) e rode:
+`python3 $S/relatorio.py resumo.json saida.pdf` (requer `reportlab`). O logo fica em `assets/logo-analyse.png`.
+
 ## Regras
 
 - Cite sempre a cláusula/trecho de origem ao resumir valores (piso, reajuste, vigência).
