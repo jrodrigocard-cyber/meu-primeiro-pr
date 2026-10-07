@@ -73,7 +73,8 @@ def main(js, saida):
         if "tabela" in sec:
             s += bloco + [tabela(sec["tabela"])]
         else:
-            s += [KeepTogether(bloco)] + [Paragraph("• " + b, TXT) for b in sec["itens"]]
+            itens = [Paragraph("• " + b, TXT) for b in sec["itens"]]
+            s += [KeepTogether(bloco + itens[:1])] + itens[1:]
     doc.build(s)
 
 
