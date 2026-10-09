@@ -40,7 +40,7 @@ python3 $S/analisar.py comparar ID1 ID2           # compara cláusulas lado a la
 ```
 
 ## Resumo para o cliente
-Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas fixos, tabela Tema | O que diz | Cláusula).
+Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas fixos, tabela Tema | O que diz | Cláusula). Se a convenção tiver quinquênio, triênio ou adicional/prêmio por tempo de serviço, SEMPRE incluir como linha própria após o Reajuste.
 
 ## Relatório PDF para o cliente (padrão Anályse)
 Monte um JSON como `relatorios/MR024201-2025-resumo.json` (título, meta, seções com `tabela` ou `itens`) e rode:

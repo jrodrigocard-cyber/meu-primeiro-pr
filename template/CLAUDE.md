@@ -15,10 +15,11 @@ Ficam em `.claude/skills/<nome>/SKILL.md`. Inclusa: `anotar` (anotações em SQL
 
 ## Resumo padrão de convenção para o cliente
 Ao receber o PDF de qualquer convenção/acordo coletivo, gerar resumo em tabela
-(Tema | O que diz | Cláusula) com exatamente estes temas, nesta ordem:
+(Tema | O que diz | Cláusula) com exatamente estes temas, nesta ordem (mais a linha 3a quando existir):
 1. Vigência e data-base
 2. Piso salarial (todas as faixas/funções e a data de início)
 3. Reajuste (percentual, tabela proporcional, base da próxima revisão)
+3a. Adicional por tempo de serviço (quinquênio, triênio, prêmio por tempo de serviço): SEMPRE incluir como linha própria da tabela, logo após o Reajuste, quando a convenção tiver (percentuais, base de cálculo, limites, natureza). Se não houver, omitir a linha.
 4. Vale-refeição ou alimentação (valores, municípios, natureza, proporcionalidade)
 5. Vale-transporte
 6. Seguro de vida em grupo
