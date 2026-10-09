@@ -1,24 +1,91 @@
-{"titulo":"Resumo da Convenção Coletiva de Trabalho 2026/2028 - Motoristas","data":"09/10/2026",
-"meta":[["Registro","SRT00160/2026, registrada em 25/05/2026 (solicitação MR023848/2026)"],
-["Categoria","Motoristas e ajudantes (trabalhadores em transportes rodoviários) nas empresas do comércio atacadista de Goiás, exceto cegonheiros"],
-["Partes","Sindicato do Comércio Atacadista, Distribuidor e Atacarejo de Goiás, o SINAT-GO (patronal), e Sindicato dos Trabalhadores em Transportes Rodoviários no Estado de Goiás, o SINDITTRANSPORTE (profissional)"],
-["Vigência","01/04/2026 a 31/03/2028"]],
-"secoes":[
-{"titulo":"Principais condições","rotulo":"RESUMO","tabela":[
-["Vigência e data-base","01/04/2026 a 31/03/2028. Data-base em 1º de abril.","1ª"],
-["Piso salarial (a partir de 01/04/2026)","Salário base mensal dos motoristas de R$ 1.719,20. A partir de 01/01/2027, o piso é reajustado anualmente, mantendo a proporção com o salário mínimo.","3ª (par. 2º e 3º)"],
-["Reajuste","4,30% em 01/04/2026, sobre os salários vigentes em 31/03/2026. Ficam compensados os reajustes concedidos entre 01/06/2025 e 31/03/2026, exceto promoção, transferência e equiparação. Na data-base, as entidades negociam o reajuste das cláusulas econômicas por termo aditivo.","3ª e 4ª"],
-["Vale-refeição ou alimentação","Não consta vale-refeição. Em viagem fora do domicílio, a empresa paga diária de R$ 26,85 por refeição e R$ 47,38 por pernoite (quando o caminhão não tem cama), mediante comprovação.","10ª (diária)"],
-["Vale-transporte","Não consta.","Não consta"],
-["Seguro de vida em grupo","Não consta. A cláusula 34ª cita comprovantes de seguro de vida entre os documentos que a empresa deve exibir ao sindicato, quando solicitada.","Não consta; ver 34ª"],
-["Estabilidade da gestante","Não consta. Há estabilidade por acidente de trabalho e doença profissional, e para quem falta até 12 meses para se aposentar e tem pelo menos 5 anos na empresa.","Não consta; ver 14ª a 16ª"],
-["Jornada","Estender a jornada além das 2 primeiras horas extras, adotar a escala 12x36 e instituir banco de horas exigem acordo coletivo com o sindicato. Trabalho em feriados é proibido, salvo acordo coletivo. Lei 13.103/2015: mais 2 horas extras só com acordo coletivo e concordância escrita do motorista; essas horas têm adicional de 50% em dias úteis e 100% em domingos e feriados. Tempo de espera pago em 30% da hora normal. Intervalo de 1 a 2 horas.","18ª, 19ª, 20ª, 22ª, 24ª"],
-["Contribuição negocial dos empregados","10 parcelas de R$ 61,00, para toda a categoria, sindicalizada ou não. Descontos em junho, agosto e outubro/2026, janeiro, março, junho, agosto e outubro/2027, janeiro e março/2028, repassados até a data de pagamento dos trabalhadores. Oposição do não associado em até 10 dias úteis do desconto.","29ª"]]},
-{"titulo":"Outros pontos relevantes","itens":[
-"Prêmio permanência: 4% do salário contratual por mês, em 12 parcelas, com natureza indenizatória e mediante Termo de Adesão do trabalhador. Duas parcelas são revertidas ao sindicato, nas folhas de julho/2026 (repasse até 12/08/2026) e dezembro/2026 (repasse até 13/01/2027) (cl. 8ª).",
-"Prêmio por tempo de serviço: 3% após 3 anos, 5% após 5 anos e 8% após 10 anos na mesma empresa, sobre a parte fixa (cl. 7ª).",
-"Benefício Social Familiar: R$ 22,00 por trabalhador por mês, pagos pela empresa até o dia 10, desde 10/04/2026, sem desconto do empregado (cl. 11ª).",
-"Plano odontológico: desconto de R$ 20,12 por mês, que o empregado pode recusar (cl. 9ª).",
-"Contribuição negocial patronal: R$ 50,00 por empregado (base de março/2026), mínimo de R$ 400,00 e máximo de R$ 4.000,00, até 30/09/2026. Optantes pelo Simples têm 50% de desconto e associadas ao SINAT em dia ficam isentas (cl. 31ª).",
-"Exame de prontuário no DETRAN pode ser exigido; a empresa paga a taxa dos atuais empregados (cl. 17ª). O motorista só responde por danos ao veículo ou à carga em caso de culpa ou dolo comprovados (cl. 26ª).",
-"Multa por violação da convenção: 15% do piso por trabalhador prejudicado, a cada mês. Recusa em exibir documentos ao sindicato: R$ 300,00 por mês por trabalhador (cl. 34ª e 35ª)."]}]}
+{
+ "titulo": "Resumo da Convenção Coletiva de Trabalho 2026/2028 - Motoristas",
+ "data": "09/10/2026",
+ "meta": [
+  [
+   "Registro",
+   "SRT00160/2026, registrada em 25/05/2026 (solicitação MR023848/2026)"
+  ],
+  [
+   "Categoria",
+   "Motoristas e ajudantes (trabalhadores em transportes rodoviários) nas empresas do comércio atacadista de Goiás, exceto cegonheiros"
+  ],
+  [
+   "Partes",
+   "Sindicato do Comércio Atacadista, Distribuidor e Atacarejo de Goiás, o SINAT-GO (patronal), e Sindicato dos Trabalhadores em Transportes Rodoviários no Estado de Goiás, o SINDITTRANSPORTE (profissional)"
+  ],
+  [
+   "Vigência",
+   "01/04/2026 a 31/03/2028"
+  ]
+ ],
+ "secoes": [
+  {
+   "titulo": "Principais condições",
+   "rotulo": "RESUMO",
+   "tabela": [
+    [
+     "Vigência e data-base",
+     "01/04/2026 a 31/03/2028. Data-base em 1º de abril.",
+     "1ª"
+    ],
+    [
+     "Piso salarial (a partir de 01/04/2026)",
+     "Salário base mensal dos motoristas de R$ 1.719,20. A partir de 01/01/2027, o piso é reajustado anualmente, mantendo a proporção com o salário mínimo.",
+     "3ª (par. 2º e 3º)"
+    ],
+    [
+     "Reajuste",
+     "4,30% em 01/04/2026, sobre os salários vigentes em 31/03/2026. Ficam compensados os reajustes concedidos entre 01/06/2025 e 31/03/2026, exceto promoção, transferência e equiparação. Na data-base, as entidades negociam o reajuste das cláusulas econômicas por termo aditivo.",
+     "3ª e 4ª"
+    ],
+    [
+     "Prêmio por tempo de serviço (triênio, quinquênio e decênio)",
+     "3% após mais de 3 anos, 5% após mais de 5 anos e 8% após mais de 10 anos na mesma empresa, sobre a parte fixa já reajustada. Pago mensalmente, em destaque na folha, sem integrar o salário. Os percentuais não se acumulam. Limitado à parcela de até 15 salários mínimos (fixos) ou a R$ 2.878,50 (parte fixa mais comissão).",
+     "7ª"
+    ],
+    [
+     "Vale-refeição ou alimentação",
+     "Não consta vale-refeição. Em viagem fora do domicílio, a empresa paga diária de R$ 26,85 por refeição e R$ 47,38 por pernoite (quando o caminhão não tem cama), mediante comprovação.",
+     "10ª (diária)"
+    ],
+    [
+     "Vale-transporte",
+     "Não consta.",
+     "Não consta"
+    ],
+    [
+     "Seguro de vida em grupo",
+     "Não consta. A cláusula 34ª cita comprovantes de seguro de vida entre os documentos que a empresa deve exibir ao sindicato, quando solicitada.",
+     "Não consta; ver 34ª"
+    ],
+    [
+     "Estabilidade da gestante",
+     "Não consta. Há estabilidade por acidente de trabalho e doença profissional, e para quem falta até 12 meses para se aposentar e tem pelo menos 5 anos na empresa.",
+     "Não consta; ver 14ª a 16ª"
+    ],
+    [
+     "Jornada",
+     "Estender a jornada além das 2 primeiras horas extras, adotar a escala 12x36 e instituir banco de horas exigem acordo coletivo com o sindicato. Trabalho em feriados é proibido, salvo acordo coletivo. Lei 13.103/2015: mais 2 horas extras só com acordo coletivo e concordância escrita do motorista; essas horas têm adicional de 50% em dias úteis e 100% em domingos e feriados. Tempo de espera pago em 30% da hora normal. Intervalo de 1 a 2 horas.",
+     "18ª, 19ª, 20ª, 22ª, 24ª"
+    ],
+    [
+     "Contribuição negocial dos empregados",
+     "10 parcelas de R$ 61,00, para toda a categoria, sindicalizada ou não. Descontos em junho, agosto e outubro/2026, janeiro, março, junho, agosto e outubro/2027, janeiro e março/2028, repassados até a data de pagamento dos trabalhadores. Oposição do não associado em até 10 dias úteis do desconto.",
+     "29ª"
+    ]
+   ]
+  },
+  {
+   "titulo": "Outros pontos relevantes",
+   "itens": [
+    "Prêmio permanência: 4% do salário contratual por mês, em 12 parcelas, com natureza indenizatória e mediante Termo de Adesão do trabalhador. Duas parcelas são revertidas ao sindicato, nas folhas de julho/2026 (repasse até 12/08/2026) e dezembro/2026 (repasse até 13/01/2027) (cl. 8ª).",
+    "Benefício Social Familiar: R$ 22,00 por trabalhador por mês, pagos pela empresa até o dia 10, desde 10/04/2026, sem desconto do empregado (cl. 11ª).",
+    "Plano odontológico: desconto de R$ 20,12 por mês, que o empregado pode recusar (cl. 9ª).",
+    "Contribuição negocial patronal: R$ 50,00 por empregado (base de março/2026), mínimo de R$ 400,00 e máximo de R$ 4.000,00, até 30/09/2026. Optantes pelo Simples têm 50% de desconto e associadas ao SINAT em dia ficam isentas (cl. 31ª).",
+    "Exame de prontuário no DETRAN pode ser exigido; a empresa paga a taxa dos atuais empregados (cl. 17ª). O motorista só responde por danos ao veículo ou à carga em caso de culpa ou dolo comprovados (cl. 26ª).",
+    "Multa por violação da convenção: 15% do piso por trabalhador prejudicado, a cada mês. Recusa em exibir documentos ao sindicato: R$ 300,00 por mês por trabalhador (cl. 34ª e 35ª)."
+   ]
+  }
+ ]
+}

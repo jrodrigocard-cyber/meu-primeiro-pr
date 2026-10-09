@@ -1,25 +1,92 @@
-{"titulo":"Resumo da Convenção Coletiva de Trabalho 2026/2028","data":"08/10/2026",
-"meta":[["Registro","Solicitação MR017167/2026"],
-["Categoria","Empregados no comércio atacadista de Goiás (exceto as atividades e categorias excluídas na cláusula 2ª)"],
-["Partes","Sindicato do Comércio Atacadista, Distribuidor e Atacarejo de Goiás, o SINAT-GO (patronal), e Sindicato dos Empregados no Comércio no Estado de Goiás, o SECEG (profissional)"],
-["Vigência","01/04/2026 a 31/03/2028. Assinada em 12/03/2026."]],
-"secoes":[
-{"titulo":"Principais condições","rotulo":"RESUMO","tabela":[
-["Vigência e data-base","01/04/2026 a 31/03/2028. Data-base em 1º de abril.","1ª"],
-["Piso salarial (a partir de 01/04/2026)","R$ 1.722,25 para a categoria, exceto vendedores, desde que cumprida a jornada contratada. Vendedores: soma de parte fixa, comissões e DSR não inferior a R$ 1.950,00 em Goiânia e Aparecida de Goiânia e R$ 1.864,00 nas demais cidades. A partir de 01/01/2027, o piso é reajustado anualmente, mantendo a proporção com o salário mínimo. Há pisos menores para MEI, ME e EPP que aderirem ao Regime Especial de Salários: R$ 1.627,35 (MEI e ME) e R$ 1.690,21 (EPP).","3ª e 20ª"],
-["Reajuste","5,30% em 01/04/2026, sobre os salários de 01/04/2025, até o limite de R$ 7.754,00 (a parcela acima é negociada). Admitidos após abril/2025: reajuste proporcional, de 1,05300 (abril/2025) a 1,00441 (março/2026). Em 01/04/2027: INPC (IBGE) acumulado de abril/2026 a março/2027. Podem ser compensados os aumentos concedidos entre 01/04/2025 e 31/03/2026, exceto promoção, transferência e equiparação.","4ª e 5ª"],
-["Vale-refeição ou alimentação","Não consta. A convenção prevê lanche ou R$ 23,17 em jornadas diferenciadas de datas comemorativas (par. 4º da cl. 29ª). Há também o Benefício Social Familiar (ver Outros pontos).","Não consta"],
-["Vale-transporte","Desconto de até 6% do salário (parte fixa e comissões), limitado ao teto de 1,75 salário mínimo. Em locais sem transporte coletivo regular, pode ser pago em dinheiro, sem natureza salarial.","7ª"],
-["Seguro de vida em grupo","Não consta. O Benefício Social Familiar prevê serviço funeral de R$ 4.000,00 e manutenção de renda familiar de 6 parcelas de R$ 600,00, nos casos de falecimento ou incapacidade permanente.","Não consta; ver 16ª"],
-["Estabilidade da gestante","60 dias a contar do retorno ao trabalho da empregada afastada por gravidez. Se o retorno for obstado, ou houver demissão antes do parto, é devida indenização do período. Estabilidade de 30 dias para o pai, com comunicação em até 15 dias do nascimento.","24ª e 25ª"],
-["Jornada","Horas extras com adicional de 60%. Banco de horas ou compensação só com Termo de Adesão, válido de 01/04 a 31/03 e autenticado pelos dois sindicatos. Jornadas diferenciadas em datas comemorativas exigem termo próprio, com limite de 10 horas diárias. Trabalho aos domingos permitido, e em feriados só com termo de adesão.","13ª, 27ª, 29ª a 32ª"],
-["Contribuição negocial dos empregados","9,99% da remuneração, em 3 parcelas de 3,33%, cada uma limitada a R$ 148,00. Descontos em maio/2026, setembro/2026, janeiro/2027, maio/2027, setembro/2027 e janeiro/2028, com recolhimento até o dia 10 do mês seguinte. Vale para sindicalizados ou não. Oposição individual em até 30 dias do desconto.","38ª"]]},
-{"titulo":"Outros pontos relevantes","itens":[
-"Benefício Social Familiar: a empresa recolhe R$ 22,00 por trabalhador por mês, até o dia 10, a partir de 10/04/2026, sem desconto do empregado. Atraso gera multa de 10% e juros de 1% ao mês (cl. 16ª).",
-"Contribuição negocial patronal: R$ 50,00 por empregado (base de março), mínimo de R$ 400,00 e máximo de R$ 4.000,00, até 30/09 de cada ano. Optantes pelo Simples têm 50% de desconto. Associadas ao SINAT em dia ficam isentas (cl. 42ª).",
-"Prêmio por tempo de serviço: 3% após 3 anos, 5% após 5 anos e 8% após 10 anos na mesma empresa, sobre a parte fixa (cl. 15ª).",
-"Gratificação de caixa de R$ 232,81 por mês (cl. 11ª). Antecipação de 50% do 13º com as férias, se pedida em janeiro (cl. 10ª).",
-"Plano odontológico: desconto de R$ 20,12 por mês, que o empregado pode recusar (cl. 37ª).",
-"Rescisões de empregados com mais de 12 meses são homologadas no sindicato, com os dois sindicatos presentes (cl. 21ª).",
-"Multa por descumprimento da convenção: R$ 800,00 por empregado para empregadores e R$ 400,00 para empregados (cl. 45ª).",
-"Teletrabalho e trabalho intermitente só por aditivo ou acordo coletivo com o sindicato dos empregados (cl. 19ª)."]}]}
+{
+ "titulo": "Resumo da Convenção Coletiva de Trabalho 2026/2028",
+ "data": "08/10/2026",
+ "meta": [
+  [
+   "Registro",
+   "Solicitação MR017167/2026"
+  ],
+  [
+   "Categoria",
+   "Empregados no comércio atacadista de Goiás (exceto as atividades e categorias excluídas na cláusula 2ª)"
+  ],
+  [
+   "Partes",
+   "Sindicato do Comércio Atacadista, Distribuidor e Atacarejo de Goiás, o SINAT-GO (patronal), e Sindicato dos Empregados no Comércio no Estado de Goiás, o SECEG (profissional)"
+  ],
+  [
+   "Vigência",
+   "01/04/2026 a 31/03/2028. Assinada em 12/03/2026."
+  ]
+ ],
+ "secoes": [
+  {
+   "titulo": "Principais condições",
+   "rotulo": "RESUMO",
+   "tabela": [
+    [
+     "Vigência e data-base",
+     "01/04/2026 a 31/03/2028. Data-base em 1º de abril.",
+     "1ª"
+    ],
+    [
+     "Piso salarial (a partir de 01/04/2026)",
+     "R$ 1.722,25 para a categoria, exceto vendedores, desde que cumprida a jornada contratada. Vendedores: soma de parte fixa, comissões e DSR não inferior a R$ 1.950,00 em Goiânia e Aparecida de Goiânia e R$ 1.864,00 nas demais cidades. A partir de 01/01/2027, o piso é reajustado anualmente, mantendo a proporção com o salário mínimo. Há pisos menores para MEI, ME e EPP que aderirem ao Regime Especial de Salários: R$ 1.627,35 (MEI e ME) e R$ 1.690,21 (EPP).",
+     "3ª e 20ª"
+    ],
+    [
+     "Reajuste",
+     "5,30% em 01/04/2026, sobre os salários de 01/04/2025, até o limite de R$ 7.754,00 (a parcela acima é negociada). Admitidos após abril/2025: reajuste proporcional, de 1,05300 (abril/2025) a 1,00441 (março/2026). Em 01/04/2027: INPC (IBGE) acumulado de abril/2026 a março/2027. Podem ser compensados os aumentos concedidos entre 01/04/2025 e 31/03/2026, exceto promoção, transferência e equiparação.",
+     "4ª e 5ª"
+    ],
+    [
+     "Prêmio por tempo de serviço (triênio, quinquênio e decênio)",
+     "3% após mais de 3 anos, 5% após mais de 5 anos e 8% após mais de 10 anos na mesma empresa, sobre a parte fixa já reajustada. Pago mensalmente, em destaque na folha, sem integrar o salário. Os percentuais não se acumulam. Limitado à parcela de até 15 salários mínimos (fixos) ou a R$ 2.878,50 (parte fixa mais comissão). Quem completou 3 ou 5 anos antes de 01/04/2018 mantém 4% e 6%.",
+     "15ª"
+    ],
+    [
+     "Vale-refeição ou alimentação",
+     "Não consta. A convenção prevê lanche ou R$ 23,17 em jornadas diferenciadas de datas comemorativas (par. 4º da cl. 29ª). Há também o Benefício Social Familiar (ver Outros pontos).",
+     "Não consta"
+    ],
+    [
+     "Vale-transporte",
+     "Desconto de até 6% do salário (parte fixa e comissões), limitado ao teto de 1,75 salário mínimo. Em locais sem transporte coletivo regular, pode ser pago em dinheiro, sem natureza salarial.",
+     "7ª"
+    ],
+    [
+     "Seguro de vida em grupo",
+     "Não consta. O Benefício Social Familiar prevê serviço funeral de R$ 4.000,00 e manutenção de renda familiar de 6 parcelas de R$ 600,00, nos casos de falecimento ou incapacidade permanente.",
+     "Não consta; ver 16ª"
+    ],
+    [
+     "Estabilidade da gestante",
+     "60 dias a contar do retorno ao trabalho da empregada afastada por gravidez. Se o retorno for obstado, ou houver demissão antes do parto, é devida indenização do período. Estabilidade de 30 dias para o pai, com comunicação em até 15 dias do nascimento.",
+     "24ª e 25ª"
+    ],
+    [
+     "Jornada",
+     "Horas extras com adicional de 60%. Banco de horas ou compensação só com Termo de Adesão, válido de 01/04 a 31/03 e autenticado pelos dois sindicatos. Jornadas diferenciadas em datas comemorativas exigem termo próprio, com limite de 10 horas diárias. Trabalho aos domingos permitido, e em feriados só com termo de adesão.",
+     "13ª, 27ª, 29ª a 32ª"
+    ],
+    [
+     "Contribuição negocial dos empregados",
+     "9,99% da remuneração, em 3 parcelas de 3,33%, cada uma limitada a R$ 148,00. Descontos em maio/2026, setembro/2026, janeiro/2027, maio/2027, setembro/2027 e janeiro/2028, com recolhimento até o dia 10 do mês seguinte. Vale para sindicalizados ou não. Oposição individual em até 30 dias do desconto.",
+     "38ª"
+    ]
+   ]
+  },
+  {
+   "titulo": "Outros pontos relevantes",
+   "itens": [
+    "Benefício Social Familiar: a empresa recolhe R$ 22,00 por trabalhador por mês, até o dia 10, a partir de 10/04/2026, sem desconto do empregado. Atraso gera multa de 10% e juros de 1% ao mês (cl. 16ª).",
+    "Contribuição negocial patronal: R$ 50,00 por empregado (base de março), mínimo de R$ 400,00 e máximo de R$ 4.000,00, até 30/09 de cada ano. Optantes pelo Simples têm 50% de desconto. Associadas ao SINAT em dia ficam isentas (cl. 42ª).",
+    "Gratificação de caixa de R$ 232,81 por mês (cl. 11ª). Antecipação de 50% do 13º com as férias, se pedida em janeiro (cl. 10ª).",
+    "Plano odontológico: desconto de R$ 20,12 por mês, que o empregado pode recusar (cl. 37ª).",
+    "Rescisões de empregados com mais de 12 meses são homologadas no sindicato, com os dois sindicatos presentes (cl. 21ª).",
+    "Multa por descumprimento da convenção: R$ 800,00 por empregado para empregadores e R$ 400,00 para empregados (cl. 45ª).",
+    "Teletrabalho e trabalho intermitente só por aditivo ou acordo coletivo com o sindicato dos empregados (cl. 19ª)."
+   ]
+  }
+ ]
+}
