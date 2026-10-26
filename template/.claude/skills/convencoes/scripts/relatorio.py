@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Gera relatório PDF (padrão Anályse) a partir de um JSON de resumo.
-Uso: relatorio.py resumo.json [saida.pdf]  (padrão: ~/Downloads/<nome>.pdf)"""
+Uso: relatorio.py resumo.json [saida.pdf] [--sem-outros]  (padrão: ~/Downloads/<nome>.pdf)
+--sem-outros omite a seção "Outros pontos relevantes" do PDF."""
 import json
 import sys
 from pathlib import Path
@@ -45,8 +46,10 @@ def tabela(linhas):
     return t
 
 
-def main(js, saida):
+def main(js, saida, sem_outros=False):
     d = json.load(open(js, encoding="utf-8"))
+    if sem_outros:
+        d["secoes"] = [x for x in d["secoes"] if x["titulo"] != "Outros pontos relevantes"]
     rodape = f"Anályse Assessoria Contábil S/S - {d['titulo']} - {d['data']}"
 
     def pagina(c, doc):
@@ -79,12 +82,14 @@ def main(js, saida):
 
 
 if __name__ == "__main__":
-    js = sys.argv[1]
-    if len(sys.argv) > 2:
-        out = sys.argv[2]
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    sem_outros = "--sem-outros" in sys.argv
+    js = args[0]
+    if len(args) > 1:
+        out = args[1]
     else:
         pasta = Path.home() / "Downloads"
         pasta.mkdir(exist_ok=True)
         out = str(pasta / (Path(js).stem + ".pdf"))
-    main(js, out)
+    main(js, out, sem_outros)
     print("PDF salvo em", out)
