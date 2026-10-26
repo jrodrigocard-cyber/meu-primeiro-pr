@@ -46,8 +46,8 @@ Seguir o "Resumo padrão de convenção para o cliente" do `CLAUDE.md` (9 temas 
 Monte um JSON como `relatorios/MR024201-2025-resumo.json` (título, meta, seções com `tabela` ou `itens`) e rode:
 `python3 $S/relatorio.py resumo.json` (salva em `~/Downloads`; requer `reportlab`). O logo fica em `assets/logo-analyse.png`. Versão Excel do mesmo resumo: `python3 $S/relatorio_xlsx.py resumo.json` (também salva em `~/Downloads`; requer `openpyxl`).
 
-## Pergunta obrigatória
-Antes de gerar o relatório, pergunte se o usuário quer remover a seção "Pontos de atenção". Vale só para aquele relatório.
+## Pontos de atenção
+Nunca vão no PDF nem no Excel. Liste-os só na resposta no chat, após entregar os arquivos, sem perguntar.
 
 ## Regras
 
